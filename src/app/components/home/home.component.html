@@ -16,3 +16,16 @@
     </li>
   </ul>
 </div>
+
+<div class="mt-4">
+  <ul class="list-group">
+    <li
+      class="text-capitalize list-group-item d-flex justify-content-between"
+      *ngFor="let user of usersit; let i = index"
+    >
+      <span>
+        <div>{{ i + 1 }}. {{ user.maidenName }}</div>
+      </span>
+    </li>
+  </ul>
+</div>

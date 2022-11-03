@@ -9,7 +9,7 @@ export class ProductService {
   private baseURL = "https://dummyjson.com";
 
   constructor(private http: HttpClient) {}
-  getAllTodos() {
+  getAllProduct() {
     return this.http.get<pip>(this.baseURL + "/products");
   }
 }
