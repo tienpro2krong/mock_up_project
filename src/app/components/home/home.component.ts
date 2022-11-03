@@ -1,6 +1,8 @@
 import { ProductService } from "./../../services/product.service";
 import { Component, OnInit } from "@angular/core";
 import { pip, Product } from "../../model/product.interface";
+import { UserService } from "src/app/services/user.service";
+import { userlol, User } from "src/app/model/user.interface";
 
 @Component({
   selector: "app-home",
@@ -16,12 +18,26 @@ export class HomeComponent implements OnInit {
   };
   prodit: Product[] = [];
 
-  constructor(private productService: ProductService) {}
+  user: userlol = {
+    users: [],
+    total: 0,
+    skip: 0,
+    limit: 0,
+  };
+  usersit: User[] = [];
+
+  constructor(
+    private productService: ProductService,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
-    this.productService.getAllTodos().subscribe((res: pip) => {
+    this.productService.getAllProduct().subscribe((res: pip) => {
       this.product = res;
       this.prodit = res.products;
+    });
+    this.userService.getAllUser().subscribe((res: userlol) => {
+      this.usersit = res.users;
     });
   }
 }
