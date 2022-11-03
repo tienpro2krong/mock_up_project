@@ -9,7 +9,7 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(user) {
-    return this.http.post('', user);
+    return this.http.post('https://dummyjson.com/auth/login', user);
   }
 
   isLoggedIn() {

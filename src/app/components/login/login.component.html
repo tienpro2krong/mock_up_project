@@ -4,9 +4,11 @@
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input
-      type="email"
 
-      name="email"
+      type="username"
+      [(ngModel)]="user.username"
+      name="username"
+
       class="form-control"
       id="exampleInputEmail1"
       aria-describedby="emailHelp"
@@ -16,6 +18,8 @@
     <label for="exampleInputPassword1">Password</label>
     <input
       type="password"
+
+      [(ngModel)]="user.password"
 
       name="password"
       class="form-control"

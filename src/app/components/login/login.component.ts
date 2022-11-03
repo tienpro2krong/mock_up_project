@@ -9,8 +9,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   user = {
-    email: '',
-    password: '',
+    username: 'atuny0',
+    password: '9uQFF1Lh',
   };
   isInvalid: boolean = false;
   constructor(private authService: AuthService, private router: Router) {}
