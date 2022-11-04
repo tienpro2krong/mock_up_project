@@ -1,33 +1,35 @@
-<div class="mt-4">
-  <ul class="list-group">
-    <li
-      class="text-capitalize list-group-item d-flex justify-content-between"
-      *ngFor="let product of prodit; let i = index"
-    >
-      <span>
-        <div>{{ i + 1 }}. {{ product.title }}</div>
-      </span>
-      <!-- <div>
+<div class="main w-200 text-center">
+  <!-- <ul class="list-group"> -->
+  <div class="home" *ngFor="let product of prodit; let i = index">
+    <span>
+      <div>{{ i + 1 }}. {{ product.title }}</div>
+    </span>
+    <!-- <div>
         <img *ngFor="let item of product.images" src="{{ item }}" alt="" />
       </div> -->
-      <span>
-        <div>
-          <img src="{{ product.thumbnail }}" alt="" />
-        </div>
-      </span>
-      <span>
-        <button
-          class="btn btn-info mr-3"
-          [routerLink]="['/products', product.id]"
-        >
-          Show Detail
-        </button>
-      </span>
-    </li>
-  </ul>
+    <span>
+      <div>
+        <img
+          width="150px"
+          height="120px"
+          src="{{ product.thumbnail }}"
+          alt=""
+        />
+      </div>
+    </span>
+    <span>
+      <button
+        class="btn btn-info mr-3"
+        [routerLink]="['/products', product.id]"
+      >
+        Show Detail
+      </button>
+    </span>
+  </div>
+  <!-- </ul> -->
 </div>
 
-<div class="mt-4">
+<!-- <div class="mt-4">
   <ul class="list-group">
     <li
       class="text-capitalize list-group-item d-flex justify-content-between"
@@ -38,4 +40,4 @@
       </span>
     </li>
   </ul>
-</div>
+</div> -->
