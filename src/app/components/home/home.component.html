@@ -10,9 +10,19 @@
       <!-- <div>
         <img *ngFor="let item of product.images" src="{{ item }}" alt="" />
       </div> -->
-      <div>
-        <img src="{{ product.thumbnail }}" alt="" />
-      </div>
+      <span>
+        <div>
+          <img src="{{ product.thumbnail }}" alt="" />
+        </div>
+      </span>
+      <span>
+        <button
+          class="btn btn-info mr-3"
+          [routerLink]="['/products', product.id]"
+        >
+          Show Detail
+        </button>
+      </span>
     </li>
   </ul>
 </div>
