@@ -12,6 +12,7 @@ import { MainComponent } from "./components/main/main.component";
 import { HomeComponent } from "./components/home/home.component";
 import { RouterModule } from "@angular/router";
 import { ProductDetailComponent } from "./components/product-detail/product-detail.component";
+import { SideBarComponent } from './components/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ProductDetailComponent } from "./components/product-detail/product-deta
     HomeComponent,
     LoginComponent,
     ProductDetailComponent,
+    SideBarComponent,
   ],
   imports: [
     BrowserModule,
