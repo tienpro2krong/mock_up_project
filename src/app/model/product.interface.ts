@@ -3,12 +3,12 @@ export interface Product {
   title: string;
   description: string;
   price: number;
-  discoutPercentage: number;
+  discountPercentage: number;
   rating: number;
   stock: number;
   brand: string;
   category: string;
-  thumnail: string;
+  thumbnail: string;
   images: string[];
 }
 export interface pip {
