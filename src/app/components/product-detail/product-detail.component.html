@@ -1,28 +1,38 @@
 <div class="detail container">
   <div class="card">
     <div class="card-body">
-      <h3 class="card-title">{{ product?.title }}</h3>
+      <h3 class="h3 card-title">{{ product?.title }}</h3>
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-6">
-          <div class="white-box text-center">
-            <img src="{{ product?.thumbnail }}" class="img-responsive" />
+          <div class="white-box thumbnail">
+            <img
+              src="{{ product?.thumbnail }}"
+              width="380px"
+              height="300px"
+              class="img-responsive"
+            />
           </div>
         </div>
-        <div>
+
+        <!-- <div class="thumbnail">
           <img
-            *ngFor="let producttt of product.images"
-            src="{{ producttt }}"
+            class="thumbnails"
+            width="200px"
+            height="150px"
+            *ngFor="let producttt of product.images; let i = index"
+            src="{{ producttt }} "
             alt=""
           />
-        </div>
+        </div> -->
+
         <div class="col-lg-7 col-md-7 col-sm-6">
           <h3>Description</h3>
           <h4>{{ product?.description }}</h4>
-          <h2 class="mt-5">
-            ${{ product?.price
-            }}<small class="text-success">{{
-              product?.discountPercentage
-            }}</small>
+          <h2 class="mt-2">
+            Price: ${{ product?.price
+            }}<small class="text-success">
+              (Sale:{{ product?.discountPercentage }})</small
+            >
           </h2>
           <button class="btn btn-primary btn-rounded">Buy Now</button>
         </div>
@@ -45,7 +55,7 @@
                 </tr>
                 <tr>
                   <td>Category</td>
-                  <td>{{ product?.category }}</td>
+                  <td class="text-capitalize">{{ product?.category }}</td>
                 </tr>
               </tbody>
             </table>

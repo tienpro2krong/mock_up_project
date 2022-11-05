@@ -1,18 +1,19 @@
-import { LoginComponent } from "./components/login/login.component";
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
+import { LoginComponent } from './components/login/login.component';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
-import { AppComponent } from "./app.component";
-import { NavComponent } from "./components/nav/nav.component";
-import { FooterComponent } from "./components/footer/footer.component";
-import { MainComponent } from "./components/main/main.component";
-import { HomeComponent } from "./components/home/home.component";
-import { RouterModule } from "@angular/router";
-import { ProductDetailComponent } from "./components/product-detail/product-detail.component";
+import { AppComponent } from './app.component';
+import { NavComponent } from './components/nav/nav.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MainComponent } from './components/main/main.component';
+import { HomeComponent } from './components/home/home.component';
+import { RouterModule } from '@angular/router';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     LoginComponent,
     ProductDetailComponent,
     SideBarComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,25 +33,29 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     HttpClientModule,
     RouterModule.forRoot([
       {
-        path: "",
-        redirectTo: "/home",
-        pathMatch: "full",
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full',
       },
       {
-        path: "home",
+        path: 'home',
         component: HomeComponent,
       },
       {
-        path: "login",
+        path: 'login',
         component: LoginComponent,
       },
       {
-        path: "products/:id",
+        path: 'products/:id',
         component: ProductDetailComponent,
       },
       {
-        path: "products",
+        path: 'products',
         component: HomeComponent,
+      },
+      {
+        path: 'contact',
+        component: ContactComponent,
       },
     ]),
   ],
