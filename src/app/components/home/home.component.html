@@ -1,9 +1,6 @@
 <div class="main w-200 text-center">
   <!-- <ul class="list-group"> -->
   <div class="home" *ngFor="let product of prodit; let i = index">
-    <span>
-      <div>{{ i + 1 }}. {{ product.title }}</div>
-    </span>
     <!-- <div>
         <img *ngFor="let item of product.images" src="{{ item }}" alt="" />
       </div> -->
@@ -16,16 +13,19 @@
           src="{{ product.thumbnail }}"
           alt=""
         />
+        <span>
+          <div>{{ i + 1 }}. {{ product.title }}</div>
+        </span>
       </div>
     </span>
-    <span>
+    <!-- <span>
       <button
         class="btn btn-info mr-3"
         [routerLink]="['/products', product.id]"
       >
         Show Detail
       </button>
-    </span>
+    </span> -->
   </div>
   <!-- </ul> -->
 </div>
