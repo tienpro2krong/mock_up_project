@@ -1,6 +1,16 @@
 <div class="main w-200 text-center">
   <!-- <ul class="list-group"> -->
+
   <div class="home" *ngFor="let product of prodit; let i = index">
+
+  
+  
+    <span>
+      <a>
+        <div [routerLink]="['/products', product.id]">{{ product.title }}</div>
+      </a>
+    </span>
+
     <!-- <div>
         <img *ngFor="let item of product.images" src="{{ item }}" alt="" />
       </div> -->
