@@ -26,10 +26,12 @@ export class HomeComponent implements OnInit {
     limit: 0,
   };
   usersit: User[] = [];
+  category: string[] = [];
 
   constructor(
     private productService: ProductService,
-    private userService: UserService
+    private userService: UserService,
+    private categoryService: CategoryService
   ) {}
 
   ngOnInit(): void {
@@ -39,6 +41,10 @@ export class HomeComponent implements OnInit {
     });
     this.userService.getAllUser().subscribe((res: userlol) => {
       this.usersit = res.users;
+    });
+    this.categoryService.getAllCategory().subscribe((res) => {
+      this.category = res;
+      console.log(res);
     });
   }
 }
