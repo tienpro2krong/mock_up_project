@@ -1,14 +1,17 @@
 <div class="main w-200 text-center">
   <!-- <ul class="list-group"> -->
-  <div class="home" *ngFor="let product of prodit">
+
+  <div class="home" *ngFor="let product of prodit; let i = index">
+
+  
+  
     <span>
       <a>
         <div [routerLink]="['/products', product.id]">{{ product.title }}</div>
       </a>
     </span>
-    <!-- <div>
-        <img *ngFor="let item of product.images" src="{{ item }}" alt="" />
-      </div> -->
+
+
     <span>
       <div>
         <img
@@ -18,13 +21,19 @@
           src="{{ product.thumbnail }}"
           alt=""
         />
+        <span>
+          <div>{{ i + 1 }}. {{ product.title }}</div>
+        </span>
       </div>
     </span>
+
     <span>
       <h4 class="">${{ product.price }}</h4>
     </span>
+
+
   </div>
-  <!-- </ul> -->
+  
 </div>
 
 <!-- <div class="mt-4">

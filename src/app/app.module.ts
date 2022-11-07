@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { AdsComponent } from './components/ads/ads.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ContactComponent } from './components/contact/contact.component';
     ProductDetailComponent,
     SideBarComponent,
     ContactComponent,
+    AdsComponent,
   ],
   imports: [
     BrowserModule,
