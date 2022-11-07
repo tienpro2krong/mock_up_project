@@ -1,25 +1,28 @@
-<div class="main w-200 text-center">
-  <div class="home" *ngFor="let product of prodit; let i = index">
+
+<div class="main  ">
+  <!-- <ul class="list-group"> -->
+  <div class="home" *ngFor="let product of prodit">
     <span>
+
+      <div>
+        <a class="picture">
+        <img class="picture"
+          [routerLink]="['/products', product.id]"
+          width="320px"
+          height="280px"
+          src="{{ product.thumbnail }}"
+          [routerLink]="['/products', product.id]"
+        />
+
+      </a>
+      </div>
+    </span>
+    <div class="name_prooduct">
       <a>
         <div [routerLink]="['/products', product.id]">{{ product.title }}</div>
       </a>
-    </span>
+  </div>
 
-    <span>
-      <div>
-        <img
-          [routerLink]="['/products', product.id]"
-          width="150px"
-          height="120px"
-          src="{{ product.thumbnail }}"
-          alt=""
-        />
-        <span>
-          <div>{{ i + 1 }}. {{ product.title }}</div>
-        </span>
-      </div>
-    </span>
   </div>
 </div>
 
@@ -39,3 +42,4 @@
   <a [routerLink]="['/contact']">Contact</a>
   <a href="#about">About</a>
 </div>
+
