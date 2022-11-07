@@ -12,7 +12,13 @@ import { MainComponent } from './components/main/main.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
+
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AdsComponent } from './components/ads/ads.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +29,13 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
     HomeComponent,
     LoginComponent,
     ProductDetailComponent,
+
     UserDetailComponent,
+
+    SideBarComponent,
+    ContactComponent,
+    AdsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -52,8 +64,13 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
         component: HomeComponent,
       },
       {
+
         path: 'user',
         component: UserDetailComponent,
+
+        path: 'contact',
+        component: ContactComponent,
+
       },
     ]),
   ],

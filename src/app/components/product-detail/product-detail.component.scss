@@ -5,6 +5,9 @@ body{
 .card {
     margin-bottom: 30px;
 }
+.h3{
+    margin-top: 10px;
+}
 .card {
     position: relative;
     display: flex;
@@ -27,4 +30,15 @@ body{
 .table-product td{
     border-top: 0px solid #dee2e6 !important;
     color: #728299!important;
+}
+.detail{
+    margin-top: 35px;
+}
+.thumbnail{
+    display: block;
+    margin-bottom: 15px;
+   
+}
+.thumbnails{
+    padding-left: 10px;
 }
