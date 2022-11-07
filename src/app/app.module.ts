@@ -67,7 +67,8 @@ import { AdsComponent } from './components/ads/ads.component';
 
         path: 'user',
         component: UserDetailComponent,
-
+      },
+      {
         path: 'contact',
         component: ContactComponent,
 
