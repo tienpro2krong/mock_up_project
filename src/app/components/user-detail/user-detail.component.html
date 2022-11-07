@@ -1,1 +1,22 @@
-<p>user-detail works!</p>
+<div class="container">
+  <h1>User Detail</h1>
+  <div class="user__detail">
+    <div class="row mt-5">
+      <div class="col-4">
+        <img src="{{ userPro.image }}" alt="" />
+      </div>
+    </div>
+    <div class="col-8">
+      <p><span>First Name:</span> {{ userPro.firstName }}</p>
+      <p><span>Last Name: </span>{{ userPro.lastName }}</p>
+      <p><span>Maiden Name: </span>{{ userPro.maidenName }}</p>
+      <p><span>Age: </span>{{ userPro.age }}</p>
+      <p><span>Gender: </span>{{ userPro.gender }}</p>
+      <p><span>Email: </span>{{ userPro.email }}</p>
+      <p><span>Phonenumber: </span>{{ userPro.phone }}</p>
+      <p><span>Username: </span>{{ userPro.username }}</p>
+      <p><span>Password: </span>{{ userPro.password }}</p>
+      <p><span>Date of Birth: </span>{{ userPro.birthDate }}</p>
+    </div>
+  </div>
+</div>
