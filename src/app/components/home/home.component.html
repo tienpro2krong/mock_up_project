@@ -1,46 +1,25 @@
-<div class="main w-200 text-center">
+<div class="main  ">
   <!-- <ul class="list-group"> -->
   <div class="home" *ngFor="let product of prodit">
     <span>
+      <div>
+        <a class="picture">
+        <img class="picture"
+          [routerLink]="['/products', product.id]"
+          width="320px"
+          height="280px"
+          src="{{ product.thumbnail }}"
+          [routerLink]="['/products', product.id]"
+        />
+      </a>
+      </div>
+    </span>
+    <div class="name_prooduct">
       <a>
         <div [routerLink]="['/products', product.id]">{{ product.title }}</div>
       </a>
-    </span>
-    <!-- <div>
-        <img *ngFor="let item of product.images" src="{{ item }}" alt="" />
-      </div> -->
-    <span>
-      <div>
-        <img
-          [routerLink]="['/products', product.id]"
-          width="150px"
-          height="120px"
-          src="{{ product.thumbnail }}"
-          alt=""
-        />
-      </div>
-    </span>
-    <span>
-      <button
-        class="btn btn-info mr-3"
-        [routerLink]="['/products', product.id]"
-      >
-        Show Detail
-      </button>
-    </span>
+  </div>
   </div>
   <!-- </ul> -->
 </div>
 
-<!-- <div class="mt-4">
-  <ul class="list-group">
-    <li
-      class="text-capitalize list-group-item d-flex justify-content-between"
-      *ngFor="let user of usersit; let i = index"
-    >
-      <span>
-        <div>{{ i + 1 }}. {{ user.maidenName }}</div>
-      </span>
-    </li>
-  </ul>
-</div> -->
