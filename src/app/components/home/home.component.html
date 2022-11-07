@@ -1,19 +1,11 @@
 <div class="main w-200 text-center">
-  <!-- <ul class="list-group"> -->
-
   <div class="home" *ngFor="let product of prodit; let i = index">
-
-  
-  
     <span>
       <a>
         <div [routerLink]="['/products', product.id]">{{ product.title }}</div>
       </a>
     </span>
 
-    <!-- <div>
-        <img *ngFor="let item of product.images" src="{{ item }}" alt="" />
-      </div> -->
     <span>
       <div>
         <img
@@ -28,27 +20,22 @@
         </span>
       </div>
     </span>
-    <!-- <span>
-      <button
-        class="btn btn-info mr-3"
-        [routerLink]="['/products', product.id]"
-      >
-        Show Detail
-      </button>
-    </span> -->
   </div>
-  <!-- </ul> -->
 </div>
 
-<!-- <div class="mt-4">
-  <ul class="list-group">
-    <li
-      class="text-capitalize list-group-item d-flex justify-content-between"
-      *ngFor="let user of usersit; let i = index"
-    >
-      <span>
-        <div>{{ i + 1 }}. {{ user.maidenName }}</div>
-      </span>
-    </li>
-  </ul>
-</div> -->
+<div class="sidebar">
+  <div class="dropdown">
+    <button class="dropbtn">Category</button>
+    <div class="dropdown-content">
+      <a href="#">Smartphones </a>
+      <a href="#">Laptops</a>
+      <a href="#">Fragrances</a>
+      <a href="#">Skincare</a>
+      <a href="#">Home-decoration</a>
+      <a href="#">Groceries</a>
+    </div>
+  </div>
+
+  <a [routerLink]="['/contact']">Contact</a>
+  <a href="#about">About</a>
+</div>
