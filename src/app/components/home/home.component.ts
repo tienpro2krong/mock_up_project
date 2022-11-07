@@ -1,3 +1,4 @@
+import { CategoryService } from "./../../services/category.service";
 import { ProductService } from "./../../services/product.service";
 import { Component, OnInit } from "@angular/core";
 import { pip, Product } from "../../model/product.interface";
