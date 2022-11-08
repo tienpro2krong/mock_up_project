@@ -1,12 +1,8 @@
 <div class="main">
   <!-- <ul class="list-group"> -->
 
-
   <div class="home" *ngFor="let product of prodit">
-    
-
-  <div class="home" style="cursor: pointer" *ngFor="let product of prodit">
-
+    <div>{{ product.category }}</div>
     <span>
       <div>
         <a class="picture">
@@ -22,7 +18,7 @@
       </div>
     </span>
     <div class="name_prooduct">
-      <a href="">
+      <a>
         <div [routerLink]="['/products', product.id]">{{ product.title }}</div>
       </a>
 

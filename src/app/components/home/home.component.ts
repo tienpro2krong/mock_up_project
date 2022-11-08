@@ -17,8 +17,10 @@ export class HomeComponent implements OnInit {
     skip: 0,
     limit: 0,
   };
+
   prodit: Product[] = [];
   copy: Product[] = [];
+
   index: number = -1;
   user: userlol = {
     users: [],
