@@ -41,7 +41,7 @@
           (click)="cate(item)"
           *ngFor="let item of category"
           class="text-capitalize"
-          >{{ item }}
+          ><p *ngIf="check(item)">{{ item }}</p>
         </a>
       </div>
     </div>
