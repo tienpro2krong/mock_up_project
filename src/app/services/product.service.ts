@@ -11,7 +11,7 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
   getAllProduct() {
-    return this.http.get<pip>(this.baseURL + "/products");
+    return this.http.get<pip>(this.baseURL + "/products?limit=100");
   }
   getProduct(id) {
     return this.http.get<Product>(this.baseURL + "/products/" + id);
