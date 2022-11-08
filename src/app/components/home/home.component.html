@@ -1,18 +1,22 @@
+
 <div class="main">
+
   <!-- <ul class="list-group"> -->
   <div class="home" *ngFor="let product of prodit">
     <span>
       <div>
-        <a href="" class="picture">
-          <img
-            class="picture"
-            [routerLink]="['/products', product.id]"
-            width="320px"
-            height="280px"
-            src="{{ product.thumbnail }}"
-            [routerLink]="['/products', product.id]"
-          />
-        </a>
+
+        <a class="picture">
+        <img class="picture"
+          [routerLink]="['/products', product.id]"
+          width="320px"
+          height="250px"
+          src="{{ product.thumbnail }}"
+          [routerLink]="['/products', product.id]"
+        />
+
+      </a>
+
       </div>
     </span>
     <div class="name_prooduct">
