@@ -9,8 +9,12 @@
 
 
 }
+.search{
+ position: absolute;
+ right: 14%;
+}
 .main{
-    margin-top: 10%;
+    margin-top: 6%;
 
 }
 
@@ -33,7 +37,7 @@
     overflow: auto;
     left: 0px;
     height: 100%;
-    top: 7%;
+    top: 15%;
   }
 
   .sidebar a {
