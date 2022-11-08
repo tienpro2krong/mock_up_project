@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
     limit: 0,
   };
   usersit: User[] = [];
-
   category: string[] = [];
 
   constructor(
