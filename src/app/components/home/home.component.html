@@ -1,9 +1,9 @@
 <div class="main">
   <!-- <ul class="list-group"> -->
-  <div class="home" *ngFor="let product of prodit">
+  <div class="home" style="cursor: pointer" *ngFor="let product of prodit">
     <span>
       <div>
-        <a href="" class="picture">
+        <a class="picture">
           <img
             class="picture"
             [routerLink]="['/products', product.id]"
@@ -30,9 +30,6 @@
     <div class="dropdown">
       <button class="dropbtn">Category</button>
       <div class="dropdown-content">
-        <a *ngFor="let item of category" href="#" class="text-capitalize"
-          >{{ item }}
-        </a>
         <a *ngFor="let item of category" href="#" class="text-capitalize"
           >{{ item }}
         </a>
