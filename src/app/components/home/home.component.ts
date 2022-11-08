@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   };
   prodit: Product[] = [];
   copy: Product[] = [];
-
+  index: number = -1;
   user: userlol = {
     users: [],
     total: 0,
@@ -37,6 +37,19 @@ export class HomeComponent implements OnInit {
       this.productService.getAllProduct().subscribe((res: pip) => {
         this.prodit = res.products;
       });
+    }
+  }
+  check(item: string) {
+    this.index = this.copy.findIndex((value: any) => {
+      return value.category === item;
+    });
+    if (
+      this.copy[this.index].category &&
+      this.copy[this.index].category.length > 0
+    ) {
+      return true;
+    } else {
+      return false;
     }
   }
   constructor(
