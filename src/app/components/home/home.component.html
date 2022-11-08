@@ -1,6 +1,12 @@
 <div class="main">
   <!-- <ul class="list-group"> -->
+
+
+  <div class="home" *ngFor="let product of prodit">
+    
+
   <div class="home" style="cursor: pointer" *ngFor="let product of prodit">
+
     <span>
       <div>
         <a class="picture">
@@ -30,7 +36,11 @@
     <div class="dropdown">
       <button class="dropbtn">Category</button>
       <div class="dropdown-content">
-        <a *ngFor="let item of category" href="#" class="text-capitalize"
+        <a (click)="cate('s')">Home</a>
+        <a
+          (click)="cate(item)"
+          *ngFor="let item of category"
+          class="text-capitalize"
           >{{ item }}
         </a>
       </div>

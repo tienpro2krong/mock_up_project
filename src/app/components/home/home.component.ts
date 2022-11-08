@@ -1,14 +1,14 @@
-import { CategoryService } from "./../../services/category.service";
-import { ProductService } from "./../../services/product.service";
-import { Component, OnInit } from "@angular/core";
-import { pip, Product } from "../../model/product.interface";
-import { UserService } from "src/app/services/user.service";
-import { userlol, User } from "src/app/model/user.interface";
+import { CategoryService } from './../../services/category.service';
+import { ProductService } from './../../services/product.service';
+import { Component, OnInit } from '@angular/core';
+import { pip, Product } from '../../model/product.interface';
+import { UserService } from 'src/app/services/user.service';
+import { userlol, User } from 'src/app/model/user.interface';
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.scss"],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   product: pip = {
@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
     limit: 0,
   };
   prodit: Product[] = [];
+  copy: Product[] = [];
 
   user: userlol = {
     users: [],
@@ -27,7 +28,17 @@ export class HomeComponent implements OnInit {
   };
   usersit: User[] = [];
   category: string[] = [];
-
+  cate(smart: string) {
+    if (smart != 's') {
+      this.prodit = this.copy.filter((value) => {
+        return value.category == smart;
+      });
+    } else {
+      this.productService.getAllProduct().subscribe((res: pip) => {
+        this.prodit = res.products;
+      });
+    }
+  }
   constructor(
     private productService: ProductService,
     private userService: UserService,
@@ -38,6 +49,7 @@ export class HomeComponent implements OnInit {
     this.productService.getAllProduct().subscribe((res: pip) => {
       this.product = res;
       this.prodit = res.products;
+      this.copy = res.products;
     });
     this.userService.getAllUser().subscribe((res: userlol) => {
       this.usersit = res.users;
