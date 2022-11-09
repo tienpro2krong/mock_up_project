@@ -18,8 +18,12 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AdsComponent } from './components/ads/ads.component';
+
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+
+import { AboutComponent } from './components/about/about.component';
+
 
 @NgModule({
   declarations: [
@@ -36,6 +40,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     SideBarComponent,
     ContactComponent,
     AdsComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +71,13 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
         component: HomeComponent,
       },
       {
+
+
+        path: 'about',
+        component: AboutComponent,
+      },
+      {
+
         path: 'user',
         component: UserDetailComponent,
       },
