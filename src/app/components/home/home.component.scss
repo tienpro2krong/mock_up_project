@@ -1,6 +1,6 @@
 .home{
     width: 20%;
-    margin-left: 30px;
+    margin-left:20px;
     margin-bottom: 30px;
     display: inline-grid;
     text-align: center  ;
@@ -9,19 +9,28 @@
 
 }
 .search{
- position: absolute;
- right: 14%;
+ position: relative;
+ margin-left: 75%;
+ margin-bottom: 20px;
+
+
+}
+.picture{
+
+
+  display: block
+}
+.picture img{
+  transition: all .3s ease;
 }
 .main{
-margin-top: 50px;
-margin-left: 15%;
-
+ margin-left: 15%;
 
 }
 
 .picture :hover{
+  transform: scale(1.2);
 
-  box-shadow: 5px 2px  #bdbdbd;
 }
 .name_prooduct{
   text-transform: uppercase;
@@ -47,14 +56,17 @@ margin-left: 15%;
     color: black;
     padding: 16px;
     text-decoration: none;
+    transition: all .3s ease;
 
   }
 
   .sidebar a:hover {
     // background-color: rgb(207, 252, 247);
     // color: black;
-    border-bottom: thick solid rgb(207, 252, 247);
-    color: black;
+    color: rgb(255, 152, 83);
+    transform: scale(1.2);
+
+
 
 
   }
@@ -82,7 +94,7 @@ margin-left: 15%;
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgb(228, 214, 198);
+    background-color: rgb(255, 207, 168);
     width: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -105,5 +117,5 @@ margin-left: 15%;
   .dropdown:hover .dropdown-content {display: block;}
 
   /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {background-color: rgb(207, 252, 247);; color: black;}
+  .dropdown:hover .dropbtn {background-color: #ffcfa8;; color: black;}
 

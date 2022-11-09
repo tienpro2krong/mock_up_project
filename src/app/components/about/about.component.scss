@@ -1,0 +1,57 @@
+.carousel{
+  width: 1100px;
+  display: block;
+  margin-left: 15%;
+  margin-bottom: 20px;
+}
+.banner img{
+
+  height: 250px;
+  width: 530px;
+  margin: 15px;
+  display: block;
+  background-size: cover;
+
+}
+.row{
+  margin-left: 14%;
+}
+.text-banner{
+  position: absolute;
+  display: block;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-top: 5%;
+  margin-left: 20%;
+  color: white;
+
+}
+.text-banner p{
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.text-banner h3{
+  font-weight: 900;
+}
+.text-slide{
+  position: absolute;
+  display: block;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-top: 5%;
+  margin-left: 20%;
+  color: black;
+}
+.text-slide p{
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.text-slide h1{
+  font-weight: 900;
+}
+.sale img{
+  width: 1100px;
+  height: 200px;
+  margin-left: 15%;
+}
+
+
+

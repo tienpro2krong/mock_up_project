@@ -19,7 +19,9 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AdsComponent } from './components/ads/ads.component';
+
 import { AboutComponent } from './components/about/about.component';
+
 
 @NgModule({
   declarations: [
@@ -66,6 +68,13 @@ import { AboutComponent } from './components/about/about.component';
         component: HomeComponent,
       },
       {
+
+
+        path: 'about',
+        component: AboutComponent,
+      },
+      {
+
         path: 'user',
         component: UserDetailComponent,
       },
@@ -73,10 +82,7 @@ import { AboutComponent } from './components/about/about.component';
         path: 'contact',
         component: ContactComponent,
       },
-      {
-        path : 'about',
-        component :AboutComponent,
-      }
+
     ]),
   ],
   providers: [],
