@@ -11,9 +11,6 @@
   <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
 </form>
 <div class="main">
-
-
-
   <!-- <ul class="list-group"> -->
 
   <div class="home" style="cursor: pointer" *ngFor="let product of prodit">
@@ -39,36 +36,35 @@
     </div>
   </div>
 
-
   <div class="sidebar">
     <a routerLink="" (click)="cate('s')">Home</a>
 
-  <div class="sidebar" style="cursor: pointer">
-
-    <div class="dropdown">
-      <button class="dropbtn">Category</button>
-      <div class="dropdown-content">
-        <a
-          routerLink=""
-          (click)="cate(item)"
-          *ngFor="let item of category"
-          class="text-capitalize"
-          ><p *ngIf="check(item)">{{ item }}</p>
-        </a>
+    <div class="sidebar" style="cursor: pointer">
+      <div class="dropdown">
+        <button class="dropbtn">Category</button>
+        <div class="dropdown-content">
+          <a
+            routerLink=""
+            (click)="cate(item)"
+            *ngFor="let item of category"
+            class="text-capitalize"
+            ><p *ngIf="check(item)">{{ item }}</p>
+          </a>
+        </div>
       </div>
-    </div>
 
-    <a [routerLink]="['/contact']">Contact</a>
-    <a href="#about">About</a>
+      <a [routerLink]="['/contact']">Contact</a>
+      <a [routerLink]="['/about']">About</a>
 
-    <div class="nav-item active ml-auto" *ngIf="!authService.isLoggedIn()">
-      <a class="nav-link" [routerLink]="['/login']">Login </a>
-    </div>
-    <div class="nav-item active ml-auto" *ngIf="authService.isLoggedIn()">
-      <a class="nav-link" href="" [routerLink]="['/user']">Profile </a>
-    </div>
-    <div class="nav-item active" *ngIf="authService.isLoggedIn()">
-      <a class="nav-link" href="" (click)="authService.logout()">LogOut </a>
+      <div class="nav-item active ml-auto" *ngIf="!authService.isLoggedIn()">
+        <a class="nav-link" [routerLink]="['/login']">Login </a>
+      </div>
+      <div class="nav-item active ml-auto" *ngIf="authService.isLoggedIn()">
+        <a class="nav-link" href="" [routerLink]="['/user']">Profile </a>
+      </div>
+      <div class="nav-item active" *ngIf="authService.isLoggedIn()">
+        <a class="nav-link" href="" (click)="authService.logout()">LogOut </a>
+      </div>
     </div>
   </div>
 </div>
