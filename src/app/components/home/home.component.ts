@@ -4,20 +4,29 @@ import { Component, OnInit } from '@angular/core';
 import { pip, Product } from '../../model/product.interface';
 import { UserService } from 'src/app/services/user.service';
 import { userlol, User } from 'src/app/model/user.interface';
-
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  categories: string = '';
   product: pip = {
     products: [],
     total: 0,
     skip: 0,
     limit: 0,
   };
-
+  search() {
+    if (this.categories) {
+      this.prodit = this.copy.filter((value) => {
+        return value.title.includes(this.categories);
+      });
+    } else {
+      this.prodit = this.copy;
+    }
+  }
   prodit: Product[] = [];
   copy: Product[] = [];
 
@@ -55,6 +64,7 @@ export class HomeComponent implements OnInit {
     }
   }
   constructor(
+    public authService: AuthService,
     private productService: ProductService,
     private userService: UserService,
     private categoryService: CategoryService

@@ -11,9 +11,16 @@
 
 
 }
+.search{
+ position: absolute;
+ right: 14%;
+}
 .main{
+
     margin-top: 10%;
     background-color: rgb(251, 245, 253);
+
+
 
 }
 
@@ -36,7 +43,9 @@
     overflow: auto;
     left: 0px;
     height: 100%;
+
     top: 6%;
+
   }
 
   .sidebar a {

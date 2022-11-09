@@ -1,9 +1,12 @@
-
 <div class="main">
+
+
+
   <!-- <ul class="list-group"> -->
 
   <div class="home" style="cursor: pointer" *ngFor="let product of prodit">
     <!-- <div>{{ product.category }}</div> -->
+
     <span>
       <div>
         <a class="picture">
@@ -13,7 +16,6 @@
             width="200px"
             height="150px"
             src="{{ product.thumbnail }}"
-            [routerLink]="['/products', product.id]"
           />
         </a>
       </div>
@@ -22,18 +24,21 @@
       <a>
         <div [routerLink]="['/products', product.id]">{{ product.title }}</div>
       </a>
-
-      <!-- <div>
-        <img *ngFor="let item of product.images" src="{{ item }}" alt="" />
-      </div> -->
     </div>
   </div>
 
+
+  <div class="sidebar">
+    <a routerLink="" (click)="cate('s')">Home</a>
+
   <div class="sidebar" style="cursor: pointer">
+
     <div class="dropdown">
       <button class="dropbtn">Category</button>
       <div class="dropdown-content">
+        <a (click)="cate('s')">Home</a>
         <a
+          routerLink=""
           (click)="cate(item)"
           *ngFor="let item of category"
           class="text-capitalize"
@@ -43,6 +48,6 @@
     </div>
 
     <a [routerLink]="['/contact']">Contact</a>
-    <a href="">About</a>
+    <a href="#about">About</a>
   </div>
 </div>
