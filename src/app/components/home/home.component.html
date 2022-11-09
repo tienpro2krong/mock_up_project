@@ -1,3 +1,4 @@
+
 <div class="main">
   <!-- <ul class="list-group"> -->
 
@@ -9,8 +10,8 @@
           <img
             class="picture"
             [routerLink]="['/products', product.id]"
-            width="320px"
-            height="250px"
+            width="200px"
+            height="150px"
             src="{{ product.thumbnail }}"
             [routerLink]="['/products', product.id]"
           />
@@ -32,7 +33,6 @@
     <div class="dropdown">
       <button class="dropbtn">Category</button>
       <div class="dropdown-content">
-        <a (click)="cate('s')">Home</a>
         <a
           (click)="cate(item)"
           *ngFor="let item of category"
@@ -43,6 +43,6 @@
     </div>
 
     <a [routerLink]="['/contact']">Contact</a>
-    <a href="#about">About</a>
+    <a href="">About</a>
   </div>
 </div>
