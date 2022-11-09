@@ -1,3 +1,15 @@
+<br /><br /><br /><br /><br /><br />
+<form class="search form-inline" (ngSubmit)="search()">
+  <input
+    class="form-control mr-sm-2"
+    type="search"
+    placeholder="Search"
+    aria-label="Search"
+    [(ngModel)]="categories"
+    name="category"
+  />
+  <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+</form>
 <div class="main">
 
 
@@ -36,7 +48,6 @@
     <div class="dropdown">
       <button class="dropbtn">Category</button>
       <div class="dropdown-content">
-        <a (click)="cate('s')">Home</a>
         <a
           routerLink=""
           (click)="cate(item)"
@@ -49,5 +60,15 @@
 
     <a [routerLink]="['/contact']">Contact</a>
     <a href="#about">About</a>
+
+    <div class="nav-item active ml-auto" *ngIf="!authService.isLoggedIn()">
+      <a class="nav-link" [routerLink]="['/login']">Login </a>
+    </div>
+    <div class="nav-item active ml-auto" *ngIf="authService.isLoggedIn()">
+      <a class="nav-link" href="" [routerLink]="['/user']">Profile </a>
+    </div>
+    <div class="nav-item active" *ngIf="authService.isLoggedIn()">
+      <a class="nav-link" href="" (click)="authService.logout()">LogOut </a>
+    </div>
   </div>
 </div>
