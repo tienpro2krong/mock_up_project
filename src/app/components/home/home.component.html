@@ -11,7 +11,14 @@
   <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
 </form>
 <div class="main">
-  <div class="home" *ngFor="let product of prodit">
+
+ 
+
+  <!-- <ul class="list-group"> -->
+
+  <div class="home" style="cursor: pointer" *ngFor="let product of prodit">
+    <!-- <div>{{ product.category }}</div> -->
+
     <span>
       <div>
         <a class="picture">
@@ -32,8 +39,12 @@
     </div>
   </div>
 
+
   <div class="sidebar">
     <a routerLink="" (click)="cate('s')">Home</a>
+
+  <div class="sidebar" style="cursor: pointer">
+
     <div class="dropdown">
       <button class="dropbtn">Category</button>
       <div class="dropdown-content">
