@@ -37,8 +37,14 @@
   </div>
 
   <div class="sidebar">
+
     <div class="sidebar" style="cursor: pointer">
       <a routerLink="" (click)="cate('s')">Home</a>
+
+   
+
+    
+
       <div class="dropdown">
         <button class="dropbtn">Category</button>
         <div class="dropdown-content">
@@ -53,7 +59,9 @@
       </div>
 
       <a [routerLink]="['/contact']">Contact</a>
-      <a href="#about">About</a>
+
+      <a [routerLink]="['/about']">About</a>
+
 
       <div class="nav-item active ml-auto" *ngIf="!authService.isLoggedIn()">
         <a class="nav-link" [routerLink]="['/login']">Login </a>
