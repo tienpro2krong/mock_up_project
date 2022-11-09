@@ -18,6 +18,7 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AdsComponent } from './components/ads/ads.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AdsComponent } from './components/ads/ads.component';
     SideBarComponent,
     ContactComponent,
     AdsComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +62,10 @@ import { AdsComponent } from './components/ads/ads.component';
       {
         path: 'products',
         component: HomeComponent,
+      },
+      {
+        path: 'about',
+        component: AboutComponent,
       },
       {
         path: 'user',

@@ -37,9 +37,12 @@
     </div>
   </div>
 
-  <div class="sidebar">
+  <div class="sidebar" style="cursor: pointer">
+    <a (click)="cate('s')">Home</a>
+
+    <a routerLink="" (click)="cate('s')">Home</a>
+
     <div class="sidebar" style="cursor: pointer">
-      <a (click)="cate('s')">Home</a>
       <div class="dropdown">
         <button class="dropbtn">Category</button>
         <div class="dropdown-content">
