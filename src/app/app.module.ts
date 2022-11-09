@@ -18,7 +18,12 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AdsComponent } from './components/ads/ads.component';
+
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+
 import { AboutComponent } from './components/about/about.component';
+
 
 @NgModule({
   declarations: [
@@ -41,6 +46,8 @@ import { AboutComponent } from './components/about/about.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    NgxSpinnerModule,
+    CarouselModule.forRoot(),
     RouterModule.forRoot([
       {
         path: '',
@@ -64,10 +71,13 @@ import { AboutComponent } from './components/about/about.component';
         component: HomeComponent,
       },
       {
+
+
         path: 'about',
         component: AboutComponent,
       },
       {
+
         path: 'user',
         component: UserDetailComponent,
       },
