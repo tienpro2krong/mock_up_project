@@ -79,7 +79,7 @@ export class HomeComponent implements OnInit {
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
-    }, 1000);
+    }, 3000);
 
     this.productService.getAllProduct().subscribe((res: pip) => {
       this.product = res;
