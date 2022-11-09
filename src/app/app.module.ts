@@ -1,5 +1,5 @@
 import { LoginComponent } from './components/login/login.component';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +19,9 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AdsComponent } from './components/ads/ads.component';
 import { AboutComponent } from './components/about/about.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// Import library module
+import { NgxSpinnerModule } from 'ngx-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +43,9 @@ import { AboutComponent } from './components/about/about.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
+
     RouterModule.forRoot([
       {
         path: '',
