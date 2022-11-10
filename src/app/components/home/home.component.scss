@@ -8,11 +8,17 @@
     // border: 1px solid black;
 
 }
+.sort{
+  position: absolute;
+  left: 242px;
+}
+.chu{color: black;
+display: inline;}
 .search{
  position: relative;
  margin-left: 75%;
  margin-bottom: 20px;
-
+right: 100px;
 
 }
 .picture{
@@ -114,7 +120,7 @@
   .dropdown-content a:hover {background-color: rgb(255, 255, 255);}
 
   /* Show the dropdown menu on hover */
-  // .dropdown:hover .dropdown-content {display: block;}
+  .dropdown:hover .dropdown-content {display: block;}
 
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #ffcfa8;; color: black;}

@@ -3,22 +3,35 @@
   template="<img src='https://media.giphy.com/media/3y0oCOkdKKRi0/giphy.gif' />"
 >
 </ngx-spinner>
-<br /><br /><br /><br /><br /><br />
-<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
-<form class="search form-inline" (ngSubmit)="search()">
-  <input
-    class="form-control"
-    type="search"
-    placeholder="Search"
-    aria-label="Search"
-    [(ngModel)]="categories"
-    name="categorys"
-  />
-  <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
-</form>
+<br />
+<div class="d-inline d-flex">
+  <span class="sort">
+    <p class="chu">Sorted by:</p>
+    <button class="btn btn-light" (click)="sort('ratingSort')">Rating</button>
+    <button class="btn btn-light" (click)="sort('stockSort')">Best Sale</button>
+    <button class="btn btn-light" (click)="sort('discountSort')">
+      Discount products
+    </button>
+  </span>
+
+  <form class="search form-inline" (ngSubmit)="search()">
+    <div>
+      <input
+        class="form-control"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        [(ngModel)]="categories"
+        name="category"
+      />
+
+      <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+    </div>
+  </form>
+</div>
 <div class="main">
   <!-- <ul class="list-group"> -->
-  <button (click)="ratingSoft()">Rating</button>
+
   <div class="home" style="cursor: pointer" *ngFor="let product of prodit">
     <!-- <div>{{ product.category }}</div> -->
 
@@ -45,8 +58,36 @@
       <div class="sidebar">
         <div class="sidebar" style="cursor: pointer">
           <a routerLink="" (click)="cate('s')">Home</a>
-          <div class="dropdown">
-            <button class="dropbtn">Category</button>
+          <div class="btn-group" dropdown>
+            <button
+              id="button-basic"
+              dropdownToggle
+              type="button"
+              class="btn btn-primary dropdown-toggle"
+              aria-controls="dropdown-basic"
+            >
+              Category <span class="caret"></span>
+            </button>
+            <ul
+              id="dropdown-basic"
+              *dropdownMenu
+              class="dropdown-menu"
+              role="menu"
+              aria-labelledby="button-basic"
+            >
+              <li role="menuitem">
+                <a
+                  routerLink=""
+                  (click)="cate(item)"
+                  *ngFor="let item of category"
+                  class="dropdown-item"
+                  href="#"
+                  ><p *ngIf="check(item)">{{ item }}</p></a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- <button class="dropbtn">Category</button>
             <div class="dropdown-content">
               <a
                 routerLink=""
@@ -56,7 +97,7 @@
                 ><p *ngIf="check(item)">{{ item }}</p>
               </a>
             </div>
-          </div>
+          </div> -->
 
           <a [routerLink]="['/contact']">Contact</a>
           <div [routerLink]="['/homepage']">About</div>

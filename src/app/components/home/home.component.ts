@@ -92,20 +92,33 @@ export class HomeComponent implements OnInit {
     });
     this.categoryService.getAllCategory().subscribe((res) => {
       this.category = res;
+      console.log(res);
     });
-    this.spinner.show();
-
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 2000);
   }
-  ratingSoft = (): Product[] => {
-    this.prodit = this.prodit
-      .sort((a, b) => {
-        return b.rating - a.rating;
-      })
-      .slice(0, 10);
-    return this.prodit;
+  sort = (name: string): Product[] => {
+    if (name == 'ratingSort') {
+      this.prodit = this.prodit
+        .sort((a, b) => {
+          return b.rating - a.rating;
+        })
+        .slice(0, 10);
+      return this.prodit;
+    }
+    if (name == 'stockSort') {
+      this.prodit = this.prodit
+        .sort((a, b) => {
+          return a.stock - b.stock;
+        })
+        .slice(0, 10);
+      return this.prodit;
+    }
+    if (name == 'discountSort') {
+      this.prodit = this.prodit
+        .sort((a, b) => {
+          return b.discountPercentage - a.discountPercentage;
+        })
+        .slice(0, 10);
+      return this.prodit;
+    }
   };
 }
