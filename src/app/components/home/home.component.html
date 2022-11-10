@@ -1,7 +1,7 @@
 <br /><br /><br /><br /><br /><br />
 <form class="search form-inline" (ngSubmit)="search()">
   <input
-    class="form-control "
+    class="form-control"
     type="search"
     placeholder="Search"
     aria-label="Search"
@@ -11,7 +11,6 @@
   <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
 </form>
 <div class="main">
-
   <!-- <ul class="list-group"> -->
 
   <div class="home" style="cursor: pointer" *ngFor="let product of prodit">
@@ -19,15 +18,15 @@
 
     <span>
       <div class="picture">
-        <a >
-        <img
-          [routerLink]="['/products', product.id]"
-          width="250px"
-          height="200px"
-          src="{{ product.thumbnail }}"
-          [routerLink]="['/products', product.id]"
-        />
-      </a>
+        <a>
+          <img
+            [routerLink]="['/products', product.id]"
+            width="250px"
+            height="200px"
+            src="{{ product.thumbnail }}"
+            [routerLink]="['/products', product.id]"
+          />
+        </a>
       </div>
     </span>
 
@@ -35,42 +34,45 @@
       <a>
         <div [routerLink]="['/products', product.id]">{{ product.title }}</div>
       </a>
-  </div>
-  <div class="sidebar" style="cursor: pointer">
-
-
-  <div class="sidebar">
-    <a routerLink="" (click)="cate('s')">Home</a>
-
-  <div class="sidebar" style="cursor: pointer">
-
-    <div class="dropdown">
-      <button class="dropbtn">Category</button>
-      <div class="dropdown-content">
-        <a
-          routerLink=""
-          (click)="cate(item)"
-          *ngFor="let item of category"
-          class="text-capitalize"
-          ><p *ngIf="check(item)">{{ item }}</p>
-        </a>
-      </div>
     </div>
+    <div class="sidebar" style="cursor: pointer">
+      <div class="sidebar">
+        <a routerLink="" (click)="cate('s')">Home</a>
 
-    <a [routerLink]="['/contact']">Contact</a>
-    <a [routerLink]="['/homepage']">About</a>
+        <div class="sidebar" style="cursor: pointer">
+          <div class="dropdown">
+            <button class="dropbtn">Category</button>
+            <div class="dropdown-content">
+              <a
+                routerLink=""
+                (click)="cate(item)"
+                *ngFor="let item of category"
+                class="text-capitalize"
+                ><p *ngIf="check(item)">{{ item }}</p>
+              </a>
+            </div>
+          </div>
 
-      <div class="nav-item active ml-auto" *ngIf="!authService.isLoggedIn()">
-        <a class="nav-link" [routerLink]="['/login']">Login </a>
+          <a [routerLink]="['/contact']">Contact</a>
+          <div [routerLink]="['/homepage']">About</div>
+
+          <div
+            class="nav-item active ml-auto"
+            *ngIf="!authService.isLoggedIn()"
+          >
+            <a class="nav-link" [routerLink]="['/login']">Login </a>
+          </div>
+          <div class="nav-item active ml-auto" *ngIf="authService.isLoggedIn()">
+            <a class="nav-link" href="" [routerLink]="['/user']">Profile </a>
+          </div>
+          <div class="nav-item active" *ngIf="authService.isLoggedIn()">
+            <a class="nav-link" href="" (click)="authService.logout()"
+              >LogOut
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="nav-item active ml-auto" *ngIf="authService.isLoggedIn()">
-        <a class="nav-link" href="" [routerLink]="['/user']">Profile </a>
-      </div>
-      <div class="nav-item active" *ngIf="authService.isLoggedIn()">
-        <a class="nav-link" href="" (click)="authService.logout()">LogOut </a>
-      </div>
+      <!-- </ul> -->
     </div>
   </div>
-  <!-- </ul> -->
 </div>
-

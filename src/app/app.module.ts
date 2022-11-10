@@ -13,7 +13,6 @@ import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
-
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 import { SideBarComponent } from './components/side-bar/side-bar.component';
@@ -21,11 +20,8 @@ import { ContactComponent } from './components/contact/contact.component';
 
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
-
-
 import { AdsComponent } from './components/ads/ads.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
-
 
 @NgModule({
   declarations: [
@@ -39,9 +35,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     UserDetailComponent,
     SideBarComponent,
     ContactComponent,
-
-
-
+    HomepageComponent,
     AdsComponent,
   ],
   imports: [
@@ -80,13 +74,9 @@ import { HomepageComponent } from './components/homepage/homepage.component';
         component: ContactComponent,
       },
       {
-        path : 'homepage',
-        component :HomepageComponent,
-      }
-
-
-
-
+        path: 'homepage',
+        component: HomepageComponent,
+      },
     ]),
   ],
   providers: [],
