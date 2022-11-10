@@ -17,7 +17,9 @@
 </form>
 <div class="main">
   <!-- <ul class="list-group"> -->
-  <button (click)="ratingSoft()">Rating</button>
+  <button (click)="sort('ratingSort')">Rating</button>
+  <button (click)="sort('bestSaleSort')">Best Sale</button>
+  <button (click)="sort('sellingProductSort')">Selling products</button>
   <div class="home" style="cursor: pointer" *ngFor="let product of prodit">
     <!-- <div>{{ product.category }}</div> -->
 
