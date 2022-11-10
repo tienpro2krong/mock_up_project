@@ -5,6 +5,7 @@ import { pip, Product } from '../../model/product.interface';
 import { UserService } from 'src/app/services/user.service';
 import { userlol, User } from 'src/app/model/user.interface';
 import { AuthService } from 'src/app/services/auth.service';
+import { PageChangedEvent } from '../../../../node_modules/ngx-bootstrap/pagination';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -63,6 +64,8 @@ export class HomeComponent implements OnInit {
       return false;
     }
   }
+  returnedProdit: Product[] = [];
+
   constructor(
     public authService: AuthService,
     private productService: ProductService,
@@ -81,7 +84,13 @@ export class HomeComponent implements OnInit {
     });
     this.categoryService.getAllCategory().subscribe((res) => {
       this.category = res;
-      console.log(res);
     });
+
+    // this.prodt = this.prodit.map((i: number) => `Content line ${i + 1}`);
+  }
+  pageChanged(event: PageChangedEvent): void {
+    const startItem = (event.page - 1) * event.itemsPerPage;
+    const endItem = event.page * event.itemsPerPage;
+    this.returnedProdit = this.prodit.slice(startItem, endItem);
   }
 }

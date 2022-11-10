@@ -20,6 +20,7 @@ import { ContactComponent } from './components/contact/contact.component';
 
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { AdsComponent } from './components/ads/ads.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 
@@ -42,6 +43,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     BrowserModule,
     FormsModule,
     CarouselModule.forRoot(),
+    PaginationModule.forRoot(),
     HttpClientModule,
     RouterModule.forRoot([
       {
