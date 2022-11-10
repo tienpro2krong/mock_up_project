@@ -87,14 +87,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.spinner.show();
 
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 1500);
     this.productService.getAllProduct().subscribe((res: pip) => {
       this.product = res;
       this.prodit = res.products;
       this.copy = res.products;
+      this.spinner.hide();
     });
     this.userService.getAllUser().subscribe((res: userlol) => {
       this.usersit = res.users;
@@ -111,27 +108,33 @@ export class HomeComponent implements OnInit {
     const endItem = event.page * event.itemsPerPage;
     this.returnedProdit = this.prodit.slice(startItem, endItem);
   }
-  sort = (name: string): Product[] => {
-    if (name == 'ratingSort') {
-      this.prodit = this.prodit
+
+  sort = (item: string): Product[] => {
+    if (item == "ratingSort") {
+      this.prodit = this.copy
+
         .sort((a, b) => {
           return b.rating - a.rating;
         })
         .slice(0, 10);
       return this.prodit;
     }
-    if (name == 'stockSort') {
-      this.prodit = this.prodit
+
+    if (item == "bestSaleSort") {
+      this.prodit = this.copy
         .sort((a, b) => {
-          return a.stock - b.stock;
+          return b.discountPercentage - a.discountPercentage;
+
         })
         .slice(0, 10);
       return this.prodit;
     }
-    if (name == 'discountSort') {
-      this.prodit = this.prodit
+
+    if (item == "sellingProductSort") {
+      this.prodit = this.copy
         .sort((a, b) => {
-          return b.discountPercentage - a.discountPercentage;
+          return b.stock - a.stock;
+
         })
         .slice(0, 10);
       return this.prodit;
