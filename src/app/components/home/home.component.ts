@@ -1,3 +1,4 @@
+
 import { CategoryService } from './../../services/category.service';
 import { ProductService } from './../../services/product.service';
 import { Component, OnInit } from '@angular/core';
@@ -5,7 +6,13 @@ import { pip, Product } from '../../model/product.interface';
 import { UserService } from 'src/app/services/user.service';
 import { userlol, User } from 'src/app/model/user.interface';
 import { AuthService } from 'src/app/services/auth.service';
+
 import { NgxSpinnerService } from 'ngx-spinner';
+
+import { PageChangedEvent } from '../../../../node_modules/ngx-bootstrap/pagination';
+
+
+
 
 @Component({
   selector: 'app-home',
@@ -67,6 +74,8 @@ export class HomeComponent implements OnInit {
       }
     }
   }
+  returnedProdit: Product[] = [];
+
   constructor(
     private spinner: NgxSpinnerService,
     private productService: ProductService,
@@ -94,6 +103,13 @@ export class HomeComponent implements OnInit {
       this.category = res;
       console.log(res);
     });
+
+
+  }
+  pageChanged(event: PageChangedEvent): void {
+    const startItem = (event.page - 1) * event.itemsPerPage;
+    const endItem = event.page * event.itemsPerPage;
+    this.returnedProdit = this.prodit.slice(startItem, endItem);
   }
   sort = (name: string): Product[] => {
     if (name == 'ratingSort') {

@@ -23,9 +23,13 @@ import { ContactComponent } from './components/contact/contact.component';
 
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
+
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AdsComponent } from './components/ads/ads.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+
 
 @NgModule({
   declarations: [
@@ -50,6 +54,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     FormsModule,
     BsDropdownModule.forRoot(),
     CarouselModule.forRoot(),
+    PaginationModule.forRoot(),
     HttpClientModule,
     BrowserAnimationsModule,
 
