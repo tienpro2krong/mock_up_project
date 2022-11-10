@@ -6,18 +6,21 @@ import { pip, Product } from '../../model/product.interface';
 import { UserService } from 'src/app/services/user.service';
 import { userlol, User } from 'src/app/model/user.interface';
 import { AuthService } from 'src/app/services/auth.service';
+
+import { NgxSpinnerService } from 'ngx-spinner';
+
 import { PageChangedEvent } from '../../../../node_modules/ngx-bootstrap/pagination';
 
-import { NgxSpinnerService } from "ngx-spinner";
+
 
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.scss"],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  categories: string = "";
+  categories: string = '';
   prodit: Product[] = [];
   copy: Product[] = [];
   index: number = 0;
@@ -46,7 +49,7 @@ export class HomeComponent implements OnInit {
   }
 
   cate(smart: string) {
-    if (smart != "s") {
+    if (smart != 's') {
       this.prodit = this.copy.filter((value) => {
         return value.category == smart;
       });
@@ -98,6 +101,7 @@ export class HomeComponent implements OnInit {
     });
     this.categoryService.getAllCategory().subscribe((res) => {
       this.category = res;
+      console.log(res);
     });
 
 
@@ -108,7 +112,7 @@ export class HomeComponent implements OnInit {
     this.returnedProdit = this.prodit.slice(startItem, endItem);
   }
   sort = (name: string): Product[] => {
-    if (name == "ratingSort") {
+    if (name == 'ratingSort') {
       this.prodit = this.prodit
         .sort((a, b) => {
           return b.rating - a.rating;
@@ -116,7 +120,7 @@ export class HomeComponent implements OnInit {
         .slice(0, 10);
       return this.prodit;
     }
-    if (name == "stockSort") {
+    if (name == 'stockSort') {
       this.prodit = this.prodit
         .sort((a, b) => {
           return a.stock - b.stock;
@@ -124,7 +128,7 @@ export class HomeComponent implements OnInit {
         .slice(0, 10);
       return this.prodit;
     }
-    if (name == "discountSort") {
+    if (name == 'discountSort') {
       this.prodit = this.prodit
         .sort((a, b) => {
           return b.discountPercentage - a.discountPercentage;
