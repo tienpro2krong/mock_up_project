@@ -28,7 +28,11 @@
 <div class="main">
   <!-- <ul class="list-group"> -->
 
-  <div class="home" style="cursor: pointer" *ngFor="let product of prodit">
+  <div
+    class="home"
+    style="cursor: pointer"
+    *ngFor="let product of returnedProdit"
+  >
     <!-- <div>{{ product.category }}</div> -->
 
     <span>
@@ -89,4 +93,8 @@
       <!-- </ul> -->
     </div>
   </div>
+  <pagination
+    [totalItems]="prodit.length"
+    (pageChanged)="pageChanged($event)"
+  ></pagination>
 </div>

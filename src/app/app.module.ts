@@ -23,8 +23,11 @@ import { ContactComponent } from "./components/contact/contact.component";
 
 import { CarouselModule } from "ngx-bootstrap/carousel";
 
-import { AdsComponent } from "./components/ads/ads.component";
-import { HomepageComponent } from "./components/homepage/homepage.component";
+
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { AdsComponent } from './components/ads/ads.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+
 
 @NgModule({
   declarations: [
@@ -47,6 +50,7 @@ import { HomepageComponent } from "./components/homepage/homepage.component";
     NgxSpinnerModule,
     FormsModule,
     CarouselModule.forRoot(),
+    PaginationModule.forRoot(),
     HttpClientModule,
     RouterModule.forRoot([
       {
