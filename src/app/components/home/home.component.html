@@ -29,38 +29,70 @@
     </div>
   </form>
 </div>
+<div>
+  <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+</div>
 
 <div class="main">
   <!-- <ul class="list-group"> -->
-
   <div class="home" style="cursor: pointer" *ngFor="let product of prodit">
-    <!-- <div>{{ product.category }}</div> -->
+    <div class="home" style="cursor: pointer">
+      <!-- <div>{{ product.category }}</div> -->
 
-    <span>
-      <div class="picture">
+      <span>
+        <div class="picture">
+          <a>
+            <img
+              [routerLink]="['/products', product.id]"
+              width="250px"
+              height="200px"
+              src="{{ product.thumbnail }}"
+            />
+          </a>
+        </div>
+      </span>
+
+      <div class="name_prooduct">
         <a>
-          <img
-            [routerLink]="['/products', product.id]"
-            width="250px"
-            height="200px"
-            src="{{ product.thumbnail }}"
-            [routerLink]="['/products', product.id]"
-          />
+          <div [routerLink]="['/products', product.id]">
+            {{ product.title }}
+          </div>
         </a>
       </div>
-    </span>
-
-    <div class="name_prooduct">
-      <a>
-        <div [routerLink]="['/products', product.id]">{{ product.title }}</div>
-      </a>
-    </div>
-    <div class="sidebar" style="cursor: pointer">
-      <div class="sidebar">
-        <div class="sidebar" style="cursor: pointer">
-          <a routerLink="" (click)="cate('s')">Home</a>
-          <div class="dropdown">
-            <button class="dropbtn">Category</button>
+      <div class="sidebar" style="cursor: pointer">
+        <div class="sidebar">
+          <div class="sidebar" style="cursor: pointer">
+            <a (click)="cate('s')">Home</a>
+            <div class="btn-group" dropdown>
+              <button
+                id="button-basic"
+                dropdownToggle
+                type="button"
+                class="btn btn-primary dropdown-toggle"
+                aria-controls="dropdown-basic"
+              >
+                Category <span class="caret"></span>
+              </button>
+              <ul
+                id="dropdown-basic"
+                *dropdownMenu
+                class="dropdown-menu"
+                role="menu"
+                aria-labelledby="button-basic"
+              >
+                <li role="menuitem">
+                  <a
+                    routerLink=""
+                    (click)="cate(item)"
+                    *ngFor="let item of category"
+                    class="dropdown-item"
+                    href="#"
+                    ><p>{{ item }}</p></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- <button class="dropbtn">Category</button>
             <div class="dropdown-content">
               <a
                 (click)="cate(item)"
@@ -69,12 +101,13 @@
                 ><p>{{ item }}</p>
               </a>
             </div>
-          </div>
+          </div> -->
 
-          <a [routerLink]="['/contact']">Contact</a>
-          <!-- <div [routerLink]="['/homepage']">About</div> -->
+            <a [routerLink]="['/contact']">Contact</a>
+            <!-- <div [routerLink]="['/homepage']">About</div> -->
+          </div>
+          <!-- </ul> -->
         </div>
-        <!-- </ul> -->
       </div>
     </div>
   </div>

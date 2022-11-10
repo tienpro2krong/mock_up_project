@@ -23,8 +23,11 @@ import { ContactComponent } from "./components/contact/contact.component";
 
 import { CarouselModule } from "ngx-bootstrap/carousel";
 
+import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { AdsComponent } from "./components/ads/ads.component";
 import { HomepageComponent } from "./components/homepage/homepage.component";
+
+import { PaginationModule } from "ngx-bootstrap/pagination";
 
 @NgModule({
   declarations: [
@@ -42,20 +45,26 @@ import { HomepageComponent } from "./components/homepage/homepage.component";
     AdsComponent,
   ],
   imports: [
+    NgxSpinnerModule,
     BrowserModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
     FormsModule,
+    BsDropdownModule.forRoot(),
     CarouselModule.forRoot(),
+    PaginationModule.forRoot(),
     HttpClientModule,
+    BrowserAnimationsModule,
+
+    CarouselModule,
     RouterModule.forRoot([
       {
         path: "",
-        redirectTo: "/home",
+        redirectTo: "/homepage",
         pathMatch: "full",
       },
       {
-        path: "homepage",
+        path: "home",
         component: HomeComponent,
       },
       {
@@ -79,12 +88,13 @@ import { HomepageComponent } from "./components/homepage/homepage.component";
         component: ContactComponent,
       },
       {
-        path: "home",
+        path: "homepage",
         component: HomepageComponent,
       },
     ]),
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
