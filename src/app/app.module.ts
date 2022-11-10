@@ -1,28 +1,30 @@
-import { LoginComponent } from './components/login/login.component';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { AppComponent } from './app.component';
-import { NavComponent } from './components/nav/nav.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { MainComponent } from './components/main/main.component';
-import { HomeComponent } from './components/home/home.component';
-import { RouterModule } from '@angular/router';
-import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-
-import { UserDetailComponent } from './components/user-detail/user-detail.component';
-import { SideBarComponent } from './components/side-bar/side-bar.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { AdsComponent } from './components/ads/ads.component';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { AboutComponent } from './components/about/about.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from "./components/login/login.component";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 // Import library module
-import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxSpinnerModule } from "ngx-spinner";
+
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
+
+import { AppComponent } from "./app.component";
+import { NavComponent } from "./components/nav/nav.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { MainComponent } from "./components/main/main.component";
+import { HomeComponent } from "./components/home/home.component";
+import { RouterModule } from "@angular/router";
+import { ProductDetailComponent } from "./components/product-detail/product-detail.component";
+
+import { UserDetailComponent } from "./components/user-detail/user-detail.component";
+
+import { SideBarComponent } from "./components/side-bar/side-bar.component";
+import { ContactComponent } from "./components/contact/contact.component";
+
+import { CarouselModule } from "ngx-bootstrap/carousel";
+
+import { AdsComponent } from "./components/ads/ads.component";
+import { HomepageComponent } from "./components/homepage/homepage.component";
 
 @NgModule({
   declarations: [
@@ -33,56 +35,57 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     HomeComponent,
     LoginComponent,
     ProductDetailComponent,
-
     UserDetailComponent,
-
     SideBarComponent,
     ContactComponent,
+    HomepageComponent,
     AdsComponent,
-    AboutComponent,
   ],
   imports: [
     NgxSpinnerModule,
     BrowserModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule,
     FormsModule,
+    CarouselModule.forRoot(),
     HttpClientModule,
     BrowserAnimationsModule,
 
-    BsDropdownModule.forRoot(),
+    
     CarouselModule,
     RouterModule.forRoot([
       {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full',
+        path: "",
+        redirectTo: "/home",
+        pathMatch: "full",
       },
       {
-        path: 'home',
+        path: "home",
         component: HomeComponent,
       },
       {
-        path: 'login',
+        path: "login",
         component: LoginComponent,
       },
       {
-        path: 'products/:id',
+        path: "products/:id",
         component: ProductDetailComponent,
       },
       {
-        path: 'products',
+        path: "products",
         component: HomeComponent,
       },
       {
-        path: 'about',
-        component: AboutComponent,
-      },
-      {
-        path: 'user',
+        path: "user",
         component: UserDetailComponent,
       },
       {
-        path: 'contact',
+        path: "contact",
         component: ContactComponent,
+      },
+      {
+        path: "homepage",
+        component: HomepageComponent,
       },
     ]),
   ],
