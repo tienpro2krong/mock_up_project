@@ -57,10 +57,7 @@ export class HomeComponent implements OnInit {
       return value.category === item;
     });
     if (this.index) {
-      if (
-        this.copy[this.index].category &&
-        this.copy[this.index].category.length > 0
-      ) {
+      if (this.copy[this.index].category) {
         return true;
       } else {
         return false;
@@ -78,25 +75,23 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.spinner.show();
 
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 1500);
     this.productService.getAllProduct().subscribe((res: pip) => {
       this.product = res;
       this.prodit = res.products;
       this.copy = res.products;
+      this.spinner.hide();
     });
     this.userService.getAllUser().subscribe((res: userlol) => {
       this.usersit = res.users;
     });
     this.categoryService.getAllCategory().subscribe((res) => {
       this.category = res;
+      console.log(res);
     });
   }
   sort = (name: string): Product[] => {
     if (name == "ratingSort") {
-      this.prodit = this.prodit
+      this.prodit = this.copy
         .sort((a, b) => {
           return b.rating - a.rating;
         })
@@ -104,7 +99,7 @@ export class HomeComponent implements OnInit {
       return this.prodit;
     }
     if (name == "stockSort") {
-      this.prodit = this.prodit
+      this.prodit = this.copy
         .sort((a, b) => {
           return a.stock - b.stock;
         })
@@ -112,7 +107,7 @@ export class HomeComponent implements OnInit {
       return this.prodit;
     }
     if (name == "discountSort") {
-      this.prodit = this.prodit
+      this.prodit = this.copy
         .sort((a, b) => {
           return b.discountPercentage - a.discountPercentage;
         })

@@ -55,7 +55,7 @@ import { HomepageComponent } from "./components/homepage/homepage.component";
         pathMatch: "full",
       },
       {
-        path: "home",
+        path: "homepage",
         component: HomeComponent,
       },
       {
@@ -79,7 +79,7 @@ import { HomepageComponent } from "./components/homepage/homepage.component";
         component: ContactComponent,
       },
       {
-        path: "homepage",
+        path: "home",
         component: HomepageComponent,
       },
     ]),

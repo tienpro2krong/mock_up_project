@@ -8,9 +8,18 @@
     // border: 1px solid black;
 
 }
+.chu{
+  font-family: inherit;
+  margin-right: 5px;
+}
+.sort{
+  position: absolute;
+  left: 252px;
+  
+}
 .search{
  position: relative;
- margin-left: 75%;
+ margin-left: 68.5%;
  margin-bottom: 20px;
 
 
@@ -46,9 +55,7 @@
     height: 80%;
     overflow: auto;
     left: 0px;
-    top: 8%;
-
-
+    top: 12%;
   }
 
   .sidebar a {
@@ -57,7 +64,6 @@
     padding: 16px;
     text-decoration: none;
     transition: all .3s ease;
-
   }
 
   .sidebar a:hover {
@@ -86,9 +92,7 @@
   .dropdown {
     position: relative;
     display: inline-block;
-
   }
-
 
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
