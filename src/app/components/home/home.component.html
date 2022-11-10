@@ -17,7 +17,7 @@
 </form>
 <div class="main">
   <!-- <ul class="list-group"> -->
-
+  <button (click)="ratingSoft()">Rating</button>
   <div class="home" style="cursor: pointer" *ngFor="let product of prodit">
     <!-- <div>{{ product.category }}</div> -->
 
@@ -42,9 +42,8 @@
     </div>
     <div class="sidebar" style="cursor: pointer">
       <div class="sidebar">
-        <a routerLink="" (click)="cate('s')">Home</a>
-
         <div class="sidebar" style="cursor: pointer">
+          <a routerLink="" (click)="cate('s')">Home</a>
           <div class="dropdown">
             <button class="dropbtn">Category</button>
             <div class="dropdown-content">
