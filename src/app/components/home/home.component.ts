@@ -1,19 +1,19 @@
-import { CategoryService } from "./../../services/category.service";
-import { ProductService } from "./../../services/product.service";
-import { Component, OnInit } from "@angular/core";
-import { pip, Product } from "../../model/product.interface";
-import { UserService } from "src/app/services/user.service";
-import { userlol, User } from "src/app/model/user.interface";
-import { AuthService } from "src/app/services/auth.service";
-import { NgxSpinnerService } from "ngx-spinner";
+import { CategoryService } from './../../services/category.service';
+import { ProductService } from './../../services/product.service';
+import { Component, OnInit } from '@angular/core';
+import { pip, Product } from '../../model/product.interface';
+import { UserService } from 'src/app/services/user.service';
+import { userlol, User } from 'src/app/model/user.interface';
+import { AuthService } from 'src/app/services/auth.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.scss"],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  categories: string = "";
+  categories: string = '';
   prodit: Product[] = [];
   copy: Product[] = [];
   index: number = 0;
@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
   }
 
   cate(smart: string) {
-    if (smart != "s") {
+    if (smart != 's') {
       this.prodit = this.copy.filter((value) => {
         return value.category == smart;
       });
@@ -72,8 +72,7 @@ export class HomeComponent implements OnInit {
     private productService: ProductService,
     public authService: AuthService,
     private userService: UserService,
-    private categoryService: CategoryService,
-    private spinner: NgxSpinnerService
+    private categoryService: CategoryService
   ) {}
 
   ngOnInit(): void {
