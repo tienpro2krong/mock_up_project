@@ -5,6 +5,8 @@ import { pip, Product } from '../../model/product.interface';
 import { UserService } from 'src/app/services/user.service';
 import { userlol, User } from 'src/app/model/user.interface';
 import { AuthService } from 'src/app/services/auth.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { title } from 'process';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -67,7 +69,8 @@ export class HomeComponent implements OnInit {
     public authService: AuthService,
     private productService: ProductService,
     private userService: UserService,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private spinner: NgxSpinnerService
   ) {}
 
   ngOnInit(): void {
@@ -83,5 +86,11 @@ export class HomeComponent implements OnInit {
       this.category = res;
       console.log(res);
     });
+    this.spinner.show();
+
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 2000);
   }
 }

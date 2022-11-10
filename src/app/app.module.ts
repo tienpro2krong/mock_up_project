@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -14,14 +15,15 @@ import { RouterModule } from '@angular/router';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
-
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AdsComponent } from './components/ads/ads.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AboutComponent } from './components/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Import library module
 import { NgxSpinnerModule } from 'ngx-spinner';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,12 +42,14 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     AboutComponent,
   ],
   imports: [
+    NgxSpinnerModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    NgxSpinnerModule,
     BrowserAnimationsModule,
 
+    BsDropdownModule.forRoot(),
+    CarouselModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -84,5 +88,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

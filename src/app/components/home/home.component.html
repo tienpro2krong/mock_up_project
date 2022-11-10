@@ -1,5 +1,5 @@
 <br /><br /><br /><br /><br /><br />
-
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
 <form class="search form-inline" (ngSubmit)="search()">
   <input
     class="form-control mr-sm-2"
@@ -38,22 +38,37 @@
   </div>
 
   <div class="sidebar" style="cursor: pointer">
-    <a (click)="cate('s')">Home</a>
-
-    <a routerLink="" (click)="cate('s')">Home</a>
-
     <div class="sidebar" style="cursor: pointer">
-      <div class="dropdown">
-        <button class="dropbtn">Category</button>
-        <div class="dropdown-content">
-          <a
-            routerLink=""
-            (click)="cate(item)"
-            *ngFor="let item of category"
-            class="text-capitalize"
-            ><p *ngIf="check(item)">{{ item }}</p>
-          </a>
-        </div>
+      <a routerLink="" (click)="cate('s')">Home</a>
+
+      <div class="btn-group" dropdown>
+        <button
+          id="button-animated"
+          dropdownToggle
+          type="button"
+          class="btn dropdown-toggle"
+          aria-controls="dropdown-animated"
+        >
+          Category <span class="caret"></span>
+        </button>
+        <ul
+          id="dropdown-animated"
+          *dropdownMenu
+          class="dropdown-menu"
+          role="menu"
+          aria-labelledby="button-animated"
+        >
+          <li role="menuitem">
+            <a
+              class="dropdown-item"
+              routerLink=""
+              (click)="cate(item)"
+              *ngFor="let item of category"
+              class="dropdown-item"
+              ><p *ngIf="check(item)">{{ item }}</p></a
+            >
+          </li>
+        </ul>
       </div>
 
       <a [routerLink]="['/contact']">Contact</a>
