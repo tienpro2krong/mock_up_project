@@ -1,3 +1,4 @@
+
 import { CategoryService } from './../../services/category.service';
 import { ProductService } from './../../services/product.service';
 import { Component, OnInit } from '@angular/core';
@@ -6,13 +7,28 @@ import { UserService } from 'src/app/services/user.service';
 import { userlol, User } from 'src/app/model/user.interface';
 import { AuthService } from 'src/app/services/auth.service';
 import { PageChangedEvent } from '../../../../node_modules/ngx-bootstrap/pagination';
+
+import { NgxSpinnerService } from "ngx-spinner";
+
+
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
-  categories: string = '';
+  categories: string = "";
+  prodit: Product[] = [];
+  copy: Product[] = [];
+  index: number = 0;
+  user: userlol = {
+    users: [],
+    total: 0,
+    skip: 0,
+    limit: 0,
+  };
+  usersit: User[] = [];
+  category: string[] = [];
   product: pip = {
     products: [],
     total: 0,
@@ -28,20 +44,9 @@ export class HomeComponent implements OnInit {
       this.prodit = this.copy;
     }
   }
-  prodit: Product[] = [];
-  copy: Product[] = [];
 
-  index: number = -1;
-  user: userlol = {
-    users: [],
-    total: 0,
-    skip: 0,
-    limit: 0,
-  };
-  usersit: User[] = [];
-  category: string[] = [];
   cate(smart: string) {
-    if (smart != 's') {
+    if (smart != "s") {
       this.prodit = this.copy.filter((value) => {
         return value.category == smart;
       });
@@ -55,25 +60,34 @@ export class HomeComponent implements OnInit {
     this.index = this.copy.findIndex((value: any) => {
       return value.category === item;
     });
-    if (
-      this.copy[this.index].category &&
-      this.copy[this.index].category.length > 0
-    ) {
-      return true;
-    } else {
-      return false;
+    if (this.index) {
+      if (
+        this.copy[this.index].category &&
+        this.copy[this.index].category.length > 0
+      ) {
+        return true;
+      } else {
+        return false;
+      }
     }
   }
   returnedProdit: Product[] = [];
 
   constructor(
-    public authService: AuthService,
+    private spinner: NgxSpinnerService,
     private productService: ProductService,
+    public authService: AuthService,
     private userService: UserService,
     private categoryService: CategoryService
   ) {}
 
   ngOnInit(): void {
+    this.spinner.show();
+
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 1500);
     this.productService.getAllProduct().subscribe((res: pip) => {
       this.product = res;
       this.prodit = res.products;
@@ -86,11 +100,37 @@ export class HomeComponent implements OnInit {
       this.category = res;
     });
 
-    // this.prodt = this.prodit.map((i: number) => `Content line ${i + 1}`);
+
   }
   pageChanged(event: PageChangedEvent): void {
     const startItem = (event.page - 1) * event.itemsPerPage;
     const endItem = event.page * event.itemsPerPage;
     this.returnedProdit = this.prodit.slice(startItem, endItem);
   }
+  sort = (name: string): Product[] => {
+    if (name == "ratingSort") {
+      this.prodit = this.prodit
+        .sort((a, b) => {
+          return b.rating - a.rating;
+        })
+        .slice(0, 10);
+      return this.prodit;
+    }
+    if (name == "stockSort") {
+      this.prodit = this.prodit
+        .sort((a, b) => {
+          return a.stock - b.stock;
+        })
+        .slice(0, 10);
+      return this.prodit;
+    }
+    if (name == "discountSort") {
+      this.prodit = this.prodit
+        .sort((a, b) => {
+          return b.discountPercentage - a.discountPercentage;
+        })
+        .slice(0, 10);
+      return this.prodit;
+    }
+  };
 }

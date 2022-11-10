@@ -1,15 +1,30 @@
-<br /><br /><br /><br /><br /><br />
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 1)"
+  template="<img src='https://media.giphy.com/media/3y0oCOkdKKRi0/giphy.gif' />"
+>
+</ngx-spinner>
+<br />
+
 <form class="search form-inline" (ngSubmit)="search()">
-  <input
-    class="form-control"
-    type="search"
-    placeholder="Search"
-    aria-label="Search"
-    [(ngModel)]="categories"
-    name="category"
-  />
-  <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+  <span class="d-flex justify-content-between d-inline">
+    <button (click)="sort('ratingSort')">Rating</button>
+    <button (click)="sort('stockSort')">Best Sale</button>
+    <button (click)="sort('discountSort')">Discount products</button>
+  </span>
+  <div>
+    <input
+      class="form-control"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+      [(ngModel)]="categories"
+      name="category"
+    />
+
+    <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+  </div>
 </form>
+
 <div class="main">
   <!-- <ul class="list-group"> -->
 
@@ -41,9 +56,8 @@
     </div>
     <div class="sidebar" style="cursor: pointer">
       <div class="sidebar">
-        <a routerLink="" (click)="cate('s')">Home</a>
-
         <div class="sidebar" style="cursor: pointer">
+          <a routerLink="" (click)="cate('s')">Home</a>
           <div class="dropdown">
             <button class="dropbtn">Category</button>
             <div class="dropdown-content">
