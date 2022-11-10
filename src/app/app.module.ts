@@ -14,6 +14,9 @@ import { RouterModule } from '@angular/router';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { AboutComponent } from './components/about/about.component';
+
 
 @NgModule({
   declarations: [
@@ -26,11 +29,14 @@ import { ContactComponent } from './components/contact/contact.component';
     ProductDetailComponent,
     SideBarComponent,
     ContactComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    CarouselModule.forRoot(),
     HttpClientModule,
+
     RouterModule.forRoot([
       {
         path: '',
@@ -57,6 +63,10 @@ import { ContactComponent } from './components/contact/contact.component';
         path: 'contact',
         component: ContactComponent,
       },
+      {
+        path : 'about',
+        component : AboutComponent,
+      }
     ]),
   ],
   providers: [],
