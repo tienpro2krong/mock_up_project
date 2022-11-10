@@ -1,9 +1,12 @@
 import { LoginComponent } from './components/login/login.component';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// Import library module
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -20,8 +23,19 @@ import { ContactComponent } from './components/contact/contact.component';
 
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
+
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AdsComponent } from './components/ads/ads.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+
+import { BsDropdownModule } from "ngx-bootstrap/dropdown";
+import { AdsComponent } from "./components/ads/ads.component";
+import { HomepageComponent } from "./components/homepage/homepage.component";
+
+
+import { PaginationModule } from "ngx-bootstrap/pagination";
 
 @NgModule({
   declarations: [
@@ -39,15 +53,25 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     AdsComponent,
   ],
   imports: [
+    NgxSpinnerModule,
     BrowserModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule,
     FormsModule,
+    BsDropdownModule.forRoot(),
     CarouselModule.forRoot(),
+    PaginationModule.forRoot(),
     HttpClientModule,
+    BrowserAnimationsModule,
+
+    CarouselModule,
     RouterModule.forRoot([
       {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full',
+
+        path: "",
+        redirectTo: "/homepage",
+        pathMatch: "full",
+
       },
       {
         path: 'home',
@@ -81,5 +105,6 @@ import { HomepageComponent } from './components/homepage/homepage.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

@@ -1,4 +1,5 @@
 
+
 <form class="search form-inline" (ngSubmit)="search()">
   <input
     class="form-control"
@@ -8,27 +9,81 @@
     [(ngModel)]="categories"
     name="category"
   />
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 1)"
+  template="<img src='https://media.giphy.com/media/3y0oCOkdKKRi0/giphy.gif' />"
+>
+</ngx-spinner>
+<br />
+
+
+<div class="d-inline">
+  <span class="sort">
+    <p class="chu d-inline">Sorted by:</p>
+
+
+    <button class="btn btn-light" (click)="sort('ratingSort')">Rating</button>
+    <button class="btn btn-light" (click)="sort('stockSort')">Best Sale</button>
+    <button class="btn btn-light" (click)="sort('discountSort')">
+      Discount products
+    </button>
+  </span>
+
+  <form class="search form-inline" (ngSubmit)="search()">
+    <div>
+      <input
+        class="form-control"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        [(ngModel)]="categories"
+        name="category"
+      />
+
+      <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+    </div>
+  </form>
+</div>
+<div>
+
   <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
-</form>
+</div>
+
+
+      <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+    </div>
+  </form>
+</div>
 <div class="main">
   <!-- <ul class="list-group"> -->
 
   <div class="home" style="cursor: pointer" *ngFor="let product of prodit">
-    <!-- <div>{{ product.category }}</div> -->
+    <div class="home" style="cursor: pointer">
+      <!-- <div>{{ product.category }}</div> -->
 
-    <span>
-      <div class="picture">
+      <span>
+        <div class="picture">
+          <a>
+            <img
+              [routerLink]="['/products', product.id]"
+              width="250px"
+              height="200px"
+              src="{{ product.thumbnail }}"
+            />
+          </a>
+        </div>
+      </span>
+
+
+      <div class="name_prooduct">
         <a>
-          <img
-            [routerLink]="['/products', product.id]"
-            width="250px"
-            height="200px"
-            src="{{ product.thumbnail }}"
-            [routerLink]="['/products', product.id]"
-          />
+          <div [routerLink]="['/products', product.id]">
+            {{ product.title }}
+          </div>
         </a>
       </div>
-    </span>
+
 
     <div class="name_prooduct">
       <a>
@@ -40,40 +95,62 @@
       <div class="sidebar">
 
 
-        <div class="sidebar" style="cursor: pointer">
-          <div class="dropdown">
-            <button class="dropbtn">Category</button>
+      <div class="sidebar" style="cursor: pointer">
+        <div class="sidebar">
+          <div class="sidebar" style="cursor: pointer">
+            <a (click)="cate('s')">Home</a>
+            <div class="btn-group" dropdown>
+              <button
+                id="button-basic"
+                dropdownToggle
+                type="button"
+                class="btn btn-primary dropdown-toggle"
+                aria-controls="dropdown-basic"
+              >
+                Category <span class="caret"></span>
+              </button>
+              <ul
+                id="dropdown-basic"
+                *dropdownMenu
+                class="dropdown-menu"
+                role="menu"
+                aria-labelledby="button-basic"
+              >
+                <li role="menuitem">
+                  <a
+                    routerLink=""
+                    (click)="cate(item)"
+                    *ngFor="let item of category"
+                    class="dropdown-item"
+                    href="#"
+                    ><p>{{ item }}</p></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- <button class="dropbtn">Category</button>
+
+
             <div class="dropdown-content">
               <a
-                routerLink=""
                 (click)="cate(item)"
                 *ngFor="let item of category"
                 class="text-capitalize"
-                ><p *ngIf="check(item)">{{ item }}</p>
+                ><p>{{ item }}</p>
               </a>
             </div>
-          </div>
+          </div> -->
 
-          <a [routerLink]="['/contact']">Contact</a>
-          <div [routerLink]="['/homepage']">About</div>
-
-          <div
-            class="nav-item active ml-auto"
-            *ngIf="!authService.isLoggedIn()"
-          >
-            <a class="nav-link" [routerLink]="['/login']">Login </a>
+            <a [routerLink]="['/contact']">Contact</a>
+            <!-- <div [routerLink]="['/homepage']">About</div> -->
           </div>
-          <div class="nav-item active ml-auto" *ngIf="authService.isLoggedIn()">
-            <a class="nav-link" href="" [routerLink]="['/user']">Profile </a>
-          </div>
-          <div class="nav-item active" *ngIf="authService.isLoggedIn()">
-            <a class="nav-link" href="" (click)="authService.logout()"
-              >LogOut
-            </a>
-          </div>
+          <!-- </ul> -->
         </div>
       </div>
-      <!-- </ul> -->
     </div>
   </div>
+  <pagination
+    [totalItems]="prodit.length"
+    (pageChanged)="pageChanged($event)"
+  ></pagination>
 </div>
