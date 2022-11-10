@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
         console.log(res);
         this.router.navigate(['/home']);
         localStorage.setItem('token', res['token']);
+        localStorage.setItem('id', res['id']);
       },
       (err) => {
         this.isInvalid = true;

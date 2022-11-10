@@ -5,25 +5,23 @@
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-6">
           <div class="white-box thumbnail">
-            <img
+            <!-- <img
               src="{{ product?.thumbnail }}"
               width="380px"
               height="300px"
               class="img-responsive"
-            />
+            /> -->
+            <carousel>
+              <slide *ngFor="let produck of product.images; let i = index">
+                <img
+                  src="{{ produck }}"
+                  alt="index"
+                  style="display: block; width: 100%"
+                />
+              </slide>
+            </carousel>
           </div>
         </div>
-
-        <!-- <div class="thumbnail">
-          <img
-            class="thumbnails"
-            width="200px"
-            height="150px"
-            *ngFor="let producttt of product.images; let i = index"
-            src="{{ producttt }} "
-            alt=""
-          />
-        </div> -->
 
         <div class="col-lg-7 col-md-7 col-sm-6">
           <h3>Description</h3>
