@@ -12,14 +12,20 @@ import { MainComponent } from './components/main/main.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
+
 
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ContactComponent } from './components/contact/contact.component';
+
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+
+
+
 import { AdsComponent } from './components/ads/ads.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+
 
 @NgModule({
   declarations: [
@@ -33,14 +39,16 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     UserDetailComponent,
     SideBarComponent,
     ContactComponent,
+
+
+
     AdsComponent,
-    HomepageComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
     CarouselModule.forRoot(),
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -75,6 +83,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
         path : 'homepage',
         component :HomepageComponent,
       }
+
+
 
 
     ]),
