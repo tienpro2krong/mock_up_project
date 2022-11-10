@@ -1,3 +1,15 @@
+
+
+<form class="search form-inline" (ngSubmit)="search()">
+  <input
+    class="form-control"
+    type="search"
+    placeholder="Search"
+    aria-label="Search"
+    [(ngModel)]="categories"
+    name="category"
+  />
+
 <ngx-spinner
   bdColor="rgba(0, 0, 0, 1)"
   template="<img src='https://media.giphy.com/media/3y0oCOkdKKRi0/giphy.gif' />"
@@ -34,6 +46,7 @@
   </form>
 </div>
 <div>
+
   <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
 </div>
 
@@ -71,6 +84,17 @@
         </a>
       </div>
 
+
+    <div class="name_prooduct">
+      <a>
+        <div [routerLink]="['/products', product.id]">{{ product.title }}</div>
+      </a>
+    </div>
+    <div class="sidebar" style="cursor: pointer">
+      <a routerLink="" (click)="cate('s')">Home</a>
+      <div class="sidebar">
+
+
       <div class="sidebar" style="cursor: pointer">
         <div class="sidebar">
           <div class="sidebar" style="cursor: pointer">
@@ -105,6 +129,7 @@
               </ul>
             </div>
             <!-- <button class="dropbtn">Category</button>
+
 
             <div class="dropdown-content">
               <a
