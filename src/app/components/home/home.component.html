@@ -3,21 +3,31 @@
   template="<img src='https://media.giphy.com/media/3y0oCOkdKKRi0/giphy.gif' />"
 >
 </ngx-spinner>
-<br /><br /><br /><br /><br /><br />
+<br />
+
 <form class="search form-inline" (ngSubmit)="search()">
-  <input
-    class="form-control"
-    type="search"
-    placeholder="Search"
-    aria-label="Search"
-    [(ngModel)]="categories"
-    name="category"
-  />
-  <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+  <span class="d-flex justify-content-between d-inline">
+    <button (click)="sort('ratingSort')">Rating</button>
+    <button (click)="sort('stockSort')">Best Sale</button>
+    <button (click)="sort('discountSort')">Discount products</button>
+  </span>
+  <div>
+    <input
+      class="form-control"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+      [(ngModel)]="categories"
+      name="category"
+    />
+
+    <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+  </div>
 </form>
+
 <div class="main">
   <!-- <ul class="list-group"> -->
-  <button (click)="ratingSoft()">Rating</button>
+
   <div class="home" style="cursor: pointer" *ngFor="let product of prodit">
     <!-- <div>{{ product.category }}</div> -->
 
