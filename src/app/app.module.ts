@@ -19,6 +19,7 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AdsComponent } from './components/ads/ads.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AdsComponent } from './components/ads/ads.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    CarouselModule.forRoot(),
     RouterModule.forRoot([
       {
         path: '',
@@ -70,6 +72,10 @@ import { AdsComponent } from './components/ads/ads.component';
         path: 'contact',
         component: ContactComponent,
       },
+      {
+        path : 'about',
+        component :AboutComponent,
+      }
 
     ]),
   ],
