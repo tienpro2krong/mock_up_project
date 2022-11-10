@@ -18,7 +18,13 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ContactComponent } from './components/contact/contact.component';
+
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { AboutComponent } from './components/about/about.component';
+
+
 import { AdsComponent } from './components/ads/ads.component';
+
 
 @NgModule({
   declarations: [
@@ -34,12 +40,18 @@ import { AdsComponent } from './components/ads/ads.component';
 
     SideBarComponent,
     ContactComponent,
+
+    AboutComponent,
+
     AdsComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    CarouselModule.forRoot(),
     HttpClientModule,
+
     RouterModule.forRoot([
       {
         path: '',
@@ -70,6 +82,11 @@ import { AdsComponent } from './components/ads/ads.component';
         path: 'contact',
         component: ContactComponent,
       },
+
+      {
+        path : 'about',
+        component : AboutComponent,
+      }
 
     ]),
   ],
