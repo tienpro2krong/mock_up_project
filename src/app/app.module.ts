@@ -19,7 +19,7 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AdsComponent } from './components/ads/ads.component';
-import { AboutComponent } from './components/about/about.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +30,12 @@ import { AboutComponent } from './components/about/about.component';
     HomeComponent,
     LoginComponent,
     ProductDetailComponent,
-
     UserDetailComponent,
 
     SideBarComponent,
     ContactComponent,
     AdsComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,9 +73,10 @@ import { AboutComponent } from './components/about/about.component';
         component: ContactComponent,
       },
       {
-        path : 'about',
-        component :AboutComponent,
+        path : 'homepage',
+        component :HomepageComponent,
       }
+
 
     ]),
   ],
