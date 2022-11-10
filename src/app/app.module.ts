@@ -31,7 +31,6 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     LoginComponent,
     ProductDetailComponent,
     UserDetailComponent,
-
     SideBarComponent,
     ContactComponent,
     AdsComponent,
