@@ -30,6 +30,12 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 
+import { BsDropdownModule } from "ngx-bootstrap/dropdown";
+import { AdsComponent } from "./components/ads/ads.component";
+import { HomepageComponent } from "./components/homepage/homepage.component";
+
+
+import { PaginationModule } from "ngx-bootstrap/pagination";
 
 @NgModule({
   declarations: [
@@ -61,9 +67,11 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     CarouselModule,
     RouterModule.forRoot([
       {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full',
+
+        path: "",
+        redirectTo: "/homepage",
+        pathMatch: "full",
+
       },
       {
         path: 'home',

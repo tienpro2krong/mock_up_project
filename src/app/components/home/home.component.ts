@@ -1,18 +1,20 @@
 
-import { CategoryService } from './../../services/category.service';
-import { ProductService } from './../../services/product.service';
-import { Component, OnInit } from '@angular/core';
-import { pip, Product } from '../../model/product.interface';
-import { UserService } from 'src/app/services/user.service';
-import { userlol, User } from 'src/app/model/user.interface';
-import { AuthService } from 'src/app/services/auth.service';
+import { CategoryService } from "./../../services/category.service";
+import { ProductService } from "./../../services/product.service";
+import { Component, OnInit } from "@angular/core";
+import { pip, Product } from "../../model/product.interface";
+import { UserService } from "src/app/services/user.service";
+import { userlol, User } from "src/app/model/user.interface";
+import { AuthService } from "src/app/services/auth.service";
 
-import { NgxSpinnerService } from 'ngx-spinner';
-
-import { PageChangedEvent } from '../../../../node_modules/ngx-bootstrap/pagination';
+import { NgxSpinnerService } from "ngx-spinner";
 
 
 
+
+
+
+import { PageChangedEvent } from "../../../../node_modules/ngx-bootstrap/pagination";
 
 @Component({
   selector: 'app-home',
@@ -59,22 +61,20 @@ export class HomeComponent implements OnInit {
       });
     }
   }
-  check(item: string) {
-    this.index = this.copy.findIndex((value: any) => {
-      return value.category === item;
-    });
-    if (this.index) {
-      if (
-        this.copy[this.index].category &&
-        this.copy[this.index].category.length > 0
-      ) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  }
-  returnedProdit: Product[] = [];
+
+  // check(item: string) {
+  //   this.index = this.copy.findIndex((value: any) => {
+  //     return value.category === item;
+  //   });
+  //   if (this.index) {
+  //     if (this.copy[this.index].category) {
+  //       return true;
+  //     } else {
+  //       return false;
+  //     }
+  //   }
+  // }
+
 
   constructor(
     private spinner: NgxSpinnerService,
@@ -109,8 +109,8 @@ export class HomeComponent implements OnInit {
     this.returnedProdit = this.prodit.slice(startItem, endItem);
   }
 
-  sort = (item: string): Product[] => {
-    if (item == "ratingSort") {
+  sort = (name: string): Product[] => {
+    if (name == "ratingSort") {
       this.prodit = this.copy
 
         .sort((a, b) => {
@@ -120,17 +120,15 @@ export class HomeComponent implements OnInit {
       return this.prodit;
     }
 
-    if (item == "bestSaleSort") {
+    if (name == "stockSort") {
       this.prodit = this.copy
         .sort((a, b) => {
-          return b.discountPercentage - a.discountPercentage;
 
         })
         .slice(0, 10);
       return this.prodit;
     }
-
-    if (item == "sellingProductSort") {
+    if (name == "discountSort") {
       this.prodit = this.copy
         .sort((a, b) => {
           return b.stock - a.stock;
